@@ -124,9 +124,13 @@ export async function POST(req: NextRequest) {
  * a notification destination. Return 200 to pass the check.
  */
 export async function GET() {
-  return NextResponse.json({ ok: true });
+  return new NextResponse("ok", { status: 200, headers: { "Content-Type": "text/plain" } });
 }
 
 export async function HEAD() {
   return new NextResponse(null, { status: 200 });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204 });
 }
