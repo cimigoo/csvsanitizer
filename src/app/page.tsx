@@ -361,6 +361,8 @@ export default function LandingPage() {
               CSV<span className="text-emerald-600">Sanitizer</span>
             </div>
             <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
+              <Link href="/docs" className="hover:text-slate-900">API Docs</Link>
+              <Link href="/faq" className="hover:text-slate-900">FAQ</Link>
               <Link href="/privacy" className="hover:text-slate-900">Privacy</Link>
               <Link href="/terms" className="hover:text-slate-900">Terms</Link>
               <Link href="/refunds" className="hover:text-slate-900">Refunds</Link>
