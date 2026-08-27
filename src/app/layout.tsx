@@ -30,9 +30,17 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://csvsanitizer.vercel.app",
     siteName: "CSVSanitizer",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CSVSanitizer — CSV Data Cleaning API",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "CSVSanitizer — CSV Data Cleaning & Standardization API",
     description: "Clean, deduplicate, normalize and standardize CSV data with a single API call.",
   },
