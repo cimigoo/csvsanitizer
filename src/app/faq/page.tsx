@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "What are the paid plans?",
-    a: "Starter: $9/mo for 1,000 calls. Pro: $29/mo for 5,000 calls with PII detection. Business: $79/mo for 30,000 calls. All paid plans include a 7-day free trial."
+    a: "Starter: $5/mo for 1,000 calls. Pro: $15/mo for 5,000 calls with PII detection. Business: $39/mo for 30,000 calls. All paid plans include a 7-day free trial."
   },
   {
     q: "Do I need to install anything?",
