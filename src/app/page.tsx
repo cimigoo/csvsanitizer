@@ -69,19 +69,19 @@ const Icon = {
 
 const PLANS = [
   {
-    id: "starter", name: "Starter", price: 9, credits: "1,000",
+    id: "starter", name: "Starter", price: 5, credits: "1,000",
     tagline: "For individual developers & small scripts",
     features: ["1,000 API calls/month", "All 5 cleaning rules", "CSV up to 5 MB", "Type inference", "Community support", "7-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_STARTER", highlighted: false,
   },
   {
-    id: "pro", name: "Pro", price: 29, credits: "5,000",
+    id: "pro", name: "Pro", price: 15, credits: "5,000",
     tagline: "For growing teams & data pipelines",
     features: ["5,000 API calls/month", "Everything in Starter", "PII detection", "Priority processing", "Email support", "7-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_PRO", highlighted: true,
   },
   {
-    id: "business", name: "Business", price: 79, credits: "30,000",
+    id: "business", name: "Business", price: 39, credits: "30,000",
     tagline: "For enterprise data teams",
     features: ["30,000 API calls/month", "Everything in Pro", "Priority support", "Custom rule configs", "SLA guarantee", "7-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_BUSINESS", highlighted: false,
