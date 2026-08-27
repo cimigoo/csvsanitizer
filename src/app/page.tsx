@@ -71,19 +71,19 @@ const PLANS = [
   {
     id: "starter", name: "Starter", price: 5, credits: "1,000",
     tagline: "For individual developers & small scripts",
-    features: ["1,000 API calls/month", "All 5 cleaning rules", "CSV up to 5 MB", "Type inference", "Community support", "7-day free trial"],
+    features: ["1,000 API calls/month", "All 5 cleaning rules", "CSV up to 5 MB", "Type inference", "Community support", "1-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_STARTER", highlighted: false,
   },
   {
     id: "pro", name: "Pro", price: 15, credits: "5,000",
     tagline: "For growing teams & data pipelines",
-    features: ["5,000 API calls/month", "Everything in Starter", "PII detection", "Priority processing", "Email support", "7-day free trial"],
+    features: ["5,000 API calls/month", "Everything in Starter", "PII detection", "Priority processing", "Email support", "1-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_PRO", highlighted: true,
   },
   {
     id: "business", name: "Business", price: 39, credits: "30,000",
     tagline: "For enterprise data teams",
-    features: ["30,000 API calls/month", "Everything in Pro", "Priority support", "Custom rule configs", "SLA guarantee", "7-day free trial"],
+    features: ["30,000 API calls/month", "Everything in Pro", "Priority support", "Custom rule configs", "SLA guarantee", "1-day free trial"],
     priceIdEnv: "NEXT_PUBLIC_PADDLE_PRICE_BUSINESS", highlighted: false,
   },
 ];
@@ -109,7 +109,7 @@ const FAQS = [
   { q: "Does CSVSanitizer use AI or LLMs?", a: "No. CSVSanitizer is 100% rule-based — pure string matching and regex patterns. No AI, no LLMs, no external API calls. Your data never leaves our server except to return the result, and we retain nothing." },
   { q: "What is the file size limit?", a: "Each API call accepts up to 5 MB of CSV data. For larger files, split them into chunks and process sequentially." },
   { q: "Do you store my CSV data?", a: "Zero data retention. CSV data is processed in-memory and returned in the response. We do not persist, log, or store any of your data. The only state we keep is an in-memory free-trial counter that resets on server cold-starts." },
-  { q: "How does the free trial work?", a: "Every IP gets 3 free API calls per day, no API key required. Use the Playground to try the full cleaning pipeline before committing. For higher volume, subscribe to any plan — all include a 7-day free trial." },
+  { q: "How does the free trial work?", a: "Every IP gets 3 free API calls per day, no API key required. Use the Playground to try the full cleaning pipeline before committing. For higher volume, subscribe to any plan — all include a 1-day free trial." },
   { q: "What is your refund policy?", a: "If CSVSanitizer materially fails to deliver the service described, contact us within 14 days of purchase for a full or pro-rated refund. See the Refund Policy page for details." },
 ];
 
@@ -271,7 +271,7 @@ export default function LandingPage() {
               Simple, call-based pricing
             </h2>
             <p className="mt-4 text-lg text-slate-600">
-              Each API call = 1 credit. Monthly subscription, 7-day free trial on all plans.
+              Each API call = 1 credit. Monthly subscription, 1-day free trial on all plans.
             </p>
           </div>
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
