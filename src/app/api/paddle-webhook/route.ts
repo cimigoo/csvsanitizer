@@ -118,3 +118,15 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+/**
+ * Paddle Billing sends a verification request (GET/HEAD) when setting up
+ * a notification destination. Return 200 to pass the check.
+ */
+export async function GET() {
+  return NextResponse.json({ ok: true });
+}
+
+export async function HEAD() {
+  return new NextResponse(null, { status: 200 });
+}
