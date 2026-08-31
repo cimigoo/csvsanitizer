@@ -114,6 +114,28 @@ const FAQS = [
 ];
 
 export default function LandingPage() {
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+
+  const startCheckout = async (planId: string) => {
+    setLoadingPlan(planId);
+    try {
+      const res = await fetch("/api/create-checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planId }),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.checkoutUrl) {
+        alert(json.error || "Could not start checkout. Please try again.");
+        setLoadingPlan(null);
+        return;
+      }
+      window.location.href = json.checkoutUrl;
+    } catch {
+      alert("Network error. Please check your connection and try again.");
+      setLoadingPlan(null);
+    }
+  };
   const [faqOpen, setFaqOpen] = useState<number | null>(null);
 
   return (
@@ -276,7 +298,6 @@ export default function LandingPage() {
           </div>
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {PLANS.map((plan) => {
-              const priceId = process.env[plan.priceIdEnv as keyof typeof process.env] || "";
               return (
                 <div key={plan.id} className={`relative flex flex-col rounded-2xl border p-8 shadow-sm transition ${plan.highlighted ? "border-emerald-600 bg-white ring-2 ring-emerald-600" : "border-slate-200 bg-white"}`}>
                   {plan.highlighted && (
@@ -299,8 +320,8 @@ export default function LandingPage() {
                       </li>
                     ))}
                   </ul>
-                  <button type="button" onClick={() => { if (!priceId) { alert(`Set ${plan.priceIdEnv} to enable checkout.`); return; } alert(`Checkout would open for ${plan.name} — Paddle price: ${priceId}`); }} className={`mt-8 w-full rounded-xl px-4 py-3 text-sm font-semibold transition ${plan.highlighted ? "bg-emerald-600 text-white hover:bg-emerald-700" : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50"}`}>
-                    Start 7-day trial
+                  <button type="button" disabled={loadingPlan !== null} onClick={() => startCheckout(plan.id)} className={`mt-8 w-full rounded-xl px-4 py-3 text-sm font-semibold transition disabled:opacity-60 ${plan.highlighted ? "bg-emerald-600 text-white hover:bg-emerald-700" : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50"}`}>
+                    {loadingPlan === plan.id ? "Redirecting to Paddle…" : "Start 1-day free trial"}
                   </button>
                 </div>
               );
